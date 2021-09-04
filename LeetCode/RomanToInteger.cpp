@@ -17,12 +17,12 @@ public:
         {
             auto it = Rmap.find(s[s.size()-i-1]);
             ans += (*it).second;
-        }
-        for (int i=0; i<s.size()-1; i++)
-        {
-            auto it = Rmap.find(s[i]);
-            auto itNxt = Rmap.find(s[i+1]);
-            if ((*it).second < (*itNxt).second) ans -= (*it).second *2;
+            if (i<s.size()-1)
+            {
+                auto itPrv = Rmap.find(s[i]);
+                auto itNxt = Rmap.find(s[i+1]);
+                if ((*itPrv).second < (*itNxt).second) ans -= (*itPrv).second *2;
+            }
         }
         
         return ans;
