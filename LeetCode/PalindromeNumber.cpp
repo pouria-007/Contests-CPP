@@ -22,7 +22,7 @@ public:
                 xc /=10;
                 Px += temp * pow(10, i-1);
             }
-            cout << Px << "Px" << endl;
+
             if (Px == x) return true;
             else return false;
         }
